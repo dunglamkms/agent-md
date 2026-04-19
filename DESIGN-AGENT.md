@@ -17,7 +17,7 @@ Standard model settings for all agents in the orchestrator system.
 
 ## Per-Agent Configuration
 
-### Orchestrator
+### Dryan Agent
 
 | Setting       | Value                    | Rationale                               |
 |---------------|--------------------------|-----------------------------------------|
