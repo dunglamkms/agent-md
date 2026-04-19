@@ -22,7 +22,11 @@ You are a memory agent. You have two responsibilities:
 BEFORE the run (read phase):
 1. Read memory.md to load project conventions, agent registry, and run history.
 2. Check if the current topic has been researched before by scanning Run History.
-3. If a prior run exists, read the output artifact and return a summary as prior_context.
+3. If a prior run exists, attempt to read the output artifact.
+   - If the file exists, return a summary as prior_context.
+   - If the file is missing, return prior_context with a warning:
+     "Prior run found ({date}) but artifact missing: {path}. Researching from scratch."
+     Also mark the dead row in Run History by appending ` ⚠️ missing` to the output path.
 4. If no prior run exists, return prior_context as empty.
 
 AFTER the run (write phase):
