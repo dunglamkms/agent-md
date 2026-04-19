@@ -78,6 +78,18 @@ Combine outputs into this structure:
 {researcher.sources}
 ```
 
+## Output Artifact
+
+After merging, **save the result to a file** in the `output/` directory:
+
+| Setting    | Value                                      |
+|------------|--------------------------------------------|
+| `directory`| `output/`                                  |
+| `filename` | `{topic-slug}-{YYYY-MM-DD}.md`             |
+| `format`   | Markdown (using the merge structure above) |
+
+Example: topic "Playwright framework design" → `output/playwright-framework-design-2026-04-19.md`
+
 ## Inputs
 
 | Field     | Type   | Description               |
@@ -93,3 +105,4 @@ Combine outputs into this structure:
 | `draft`    | string | Written draft from Writer                        |
 | `sources`  | list   | References from Researcher                       |
 | `merged`   | string | Final combined response in the merge format above|
+| `file`     | string | Path to the saved output artifact                |
