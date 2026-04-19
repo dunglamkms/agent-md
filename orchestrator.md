@@ -2,14 +2,13 @@
 
 ## Model
 
-| Setting       | Value          |
-|---------------|----------------|
-| `provider`    | openai         |
-| `model`       | gpt-4o         |
-| `temperature` | 0.3            |
-| `max_tokens`  | 1024           |
-| `timeout`     | 60             |
-| `api_key_env` | OPENAI_API_KEY |
+| Setting       | Value                     |
+|---------------|---------------------------|
+| `provider`    | copilot                   |
+| `model`       | Claude Opus 4.6 (copilot) |
+| `temperature` | 0.3                       |
+| `max_tokens`  | 1024                      |
+| `timeout`     | 60                        |
 
 ## Role
 
@@ -28,10 +27,10 @@ Do not perform research or writing yourself — delegate entirely to the subagen
 
 ## Subagents
 
-| Agent                                    | Runs        | Purpose                          |
-|------------------------------------------|-------------|----------------------------------|
-| [Subagent A — Research](subagent-a.md)   | **parallel** | Gather factual findings on topic |
-| [Subagent B — Writer](subagent-b.md)     | **parallel** | Produce a draft on the topic     |
+| Agent                                          | Runs        | Purpose                          |
+|--------------------------------------------------|-------------|----------------------------------|
+| [Researcher Agent](researcher.md)                | **parallel** | Gather factual findings on topic |
+| [Writer Agent](writer.md)                        | **parallel** | Produce a draft on the topic     |
 
 ## Workflow
 
@@ -46,8 +45,7 @@ User Request
      ├──────────────────────┐
      ▼                      ▼
 ┌──────────────┐   ┌──────────────┐
-│ Subagent A   │   │ Subagent B   │    ← run in parallel
-│ (Research)   │   │ (Writer)     │
+│  Researcher  │   │    Writer    │    ← run in parallel
 └──────┬───────┘   └──────┬───────┘
        │                  │
        └────────┬─────────┘
@@ -61,7 +59,7 @@ User Request
 
 ## Execution Rules
 
-1. **Parallel dispatch** — Subagent A and Subagent B receive the topic simultaneously. Neither depends on the other's output.
+1. **Parallel dispatch** — Researcher and Writer receive the topic simultaneously. Neither depends on the other's output.
 2. **Timeout** — If a subagent does not respond within 30 seconds, return partial results from the completed subagent(s).
 3. **Error handling** — If a subagent fails, include an error note in the merged output and return the successful subagent's result.
 
@@ -71,13 +69,13 @@ Combine outputs into this structure:
 
 ```markdown
 ## Research Findings
-{subagent_a.findings}
+{researcher.findings}
 
 ## Draft
-{subagent_b.draft}
+{writer.draft}
 
 ## Sources
-{subagent_a.sources}
+{researcher.sources}
 ```
 
 ## Inputs
@@ -91,7 +89,7 @@ Combine outputs into this structure:
 | Field      | Type   | Description                                      |
 |------------|--------|--------------------------------------------------|
 | `topic`    | string | Extracted topic                                  |
-| `research` | string | Findings from Subagent A                         |
-| `draft`    | string | Written draft from Subagent B                    |
-| `sources`  | list   | References from Subagent A                       |
+| `research` | string | Findings from Researcher                         |
+| `draft`    | string | Written draft from Writer                        |
+| `sources`  | list   | References from Researcher                       |
 | `merged`   | string | Final combined response in the merge format above|

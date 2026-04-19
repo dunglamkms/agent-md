@@ -1,15 +1,14 @@
-# Subagent B — Writer Agent
+# Writer Agent
 
 ## Model
 
-| Setting       | Value          |
-|---------------|----------------|
-| `provider`    | openai         |
-| `model`       | gpt-4o         |
-| `temperature` | 0.7            |
-| `max_tokens`  | 2048           |
-| `timeout`     | 30             |
-| `api_key_env` | OPENAI_API_KEY |
+| Setting       | Value                      |
+|---------------|----------------------------|
+| `provider`    | copilot                    |
+| `model`       | Claude Sonnet 4 (copilot)  |
+| `temperature` | 0.7                        |
+| `max_tokens`  | 2048                       |
+| `timeout`     | 30                         |
 
 ## Role
 
