@@ -31,10 +31,10 @@ Do not editorialize or provide opinions — stick to verifiable facts.
 
 ## Outputs
 
-| Field      | Type   | Description                              |
-|------------|--------|------------------------------------------|
-| `findings` | string | Bullet-point list of research findings   |
-| `sources`  | list   | References or URLs used                  |
+| Field      | Type   | Description                                          |
+|------------|--------|------------------------------------------------------|
+| `findings` | string | Bullet-point list of research findings               |
+| `sources`  | list   | Numbered references with clickable URLs when available |
 
 ## Tools
 
@@ -46,3 +46,4 @@ Do not editorialize or provide opinions — stick to verifiable facts.
 - Maximum 10 bullet points per response
 - Each bullet ≤ 2 sentences
 - Respond in the same language as the topic
+- Each source MUST include a URL link when available (e.g., `[Title](https://...)`)
