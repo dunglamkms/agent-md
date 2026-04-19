@@ -23,3 +23,4 @@
 | Date | Topic | Output |
 |---|---|---|
 | 2026-04-19 | automation framework | `output/automation-framework-2026-04-19.md` |
+| 2026-04-19 | AI agent memory architectures and patterns | `output/ai-agent-memory-architectures-and-patterns-2026-04-19.md` |
