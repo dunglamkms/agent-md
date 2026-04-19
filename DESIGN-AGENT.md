@@ -47,10 +47,21 @@ Standard model settings for all agents in the orchestrator system.
 | `max_tokens`  | 2048                     | Room for full draft                     |
 | `timeout`     | 30                       | Per execution-rule timeout              |
 
+### Memory Agent
+
+| Setting       | Value                    | Rationale                               |
+|---------------|--------------------------|-----------------------------------------|
+| `provider`    | copilot                  | GitHub Copilot in VS Code               |
+| `model`       | Claude Sonnet 4 (copilot) | Fast, precise for memory read/write     |
+| `temperature` | 0.1                      | Minimal — deterministic memory ops      |
+| `max_tokens`  | 1024                     | Short prior context summaries           |
+| `timeout`     | 30                       | Per execution-rule timeout              |
+
 ## Design Decisions
 
 1. **GitHub Copilot as runtime** — no API keys needed; authentication via your GitHub subscription in VS Code.
 2. **Opus for orchestrator, Sonnet for subagents** — Opus 4.6 excels at complex reasoning/coordination; Sonnet 4 is faster and well-suited for focused tasks.
-3. **Temperature varies by role** — research (0.2) favours precision; writing (0.7) favours variety; orchestrator (0.3) favours consistency.
+3. **Temperature varies by role** — research (0.2) favours precision; writing (0.7) favours variety; memory (0.1) favours determinism; orchestrator (0.3) favours consistency.
 4. **Timeouts align with orchestrator execution rules** — subagents get 30s each; orchestrator gets 60s to cover subagent time + merge.
-5. **Copilot subagent dispatch** — the orchestrator uses Copilot's `runSubagent` capability to dispatch both subagents in parallel.
+5. **Copilot subagent dispatch** — the orchestrator uses Copilot's `runSubagent` capability to dispatch all subagents in parallel.
+6. **Memory Agent** — reads `memory.md` in parallel with Researcher/Writer (read phase), then updates run history after merge (write phase).

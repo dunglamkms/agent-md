@@ -17,6 +17,7 @@
 | `dryan-agent.md` | Orchestrator | Opus 4.6 | 0.3 |
 | `researcher.md` | Research | Sonnet 4 | 0.2 |
 | `writer.md` | Writer | Sonnet 4 | 0.7 |
+| `memory-agent.md` | Memory | Sonnet 4 | 0.1 |
 
 ## Run History
 
