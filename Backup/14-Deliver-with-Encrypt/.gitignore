@@ -1,0 +1,11 @@
+# Plaintext engine — NEVER commit
+_engine.md
+
+# Output artifacts
+output/
+
+# Debug logs
+output/*.log
+
+# macOS
+.DS_Store
