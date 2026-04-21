@@ -26,6 +26,3 @@
 | 2026-04-19 | automation framework | `output/automation-framework-2026-04-19.md` |
 | 2026-04-19 | AI agent memory architectures and patterns | `output/ai-agent-memory-architectures-and-patterns-2026-04-19.md` |
 | 2026-04-21 | prompt engineering best practices | `output/prompt-engineering-best-practices-2026-04-21.md` |
-| 2026-04-21 | AI agents in software testing | `output/ai-agents-in-software-testing-2026-04-21.md` |
-| 2026-04-22 | multi-agent orchestration patterns | `output/multi-agent-orchestration-patterns-2026-04-22.md` |
-| 2026-04-22 | LLM context window management | `output/llm-context-window-management-2026-04-22.md` |
