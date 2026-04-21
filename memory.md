@@ -25,3 +25,4 @@
 |---|---|---|
 | 2026-04-19 | automation framework | `output/automation-framework-2026-04-19.md` |
 | 2026-04-19 | AI agent memory architectures and patterns | `output/ai-agent-memory-architectures-and-patterns-2026-04-19.md` |
+| 2026-04-21 | prompt engineering best practices | `output/prompt-engineering-best-practices-2026-04-21.md` |
