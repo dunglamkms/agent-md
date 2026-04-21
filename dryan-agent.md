@@ -77,12 +77,12 @@ User Request
   ```
   [DEBUG:config] agent=dryan resolved: provider=copilot model=Opus4.6 temp=0.3 max_tokens=1024 timeout=60
   ```
-- If `debug_dispatch = on`, log each subagent dispatch and completion:
+- If `debug_dispatch = on`, log each subagent dispatch and completion with resolved model info:
   ```
-  [DEBUG:dispatch] sending topic="{topic}" to=researcher,writer,memory
-  [DEBUG:dispatch] researcher completed in {N}s
-  [DEBUG:dispatch] writer completed in {N}s
-  [DEBUG:dispatch] memory completed in {N}s
+  [DEBUG:dispatch] sending topic="{topic}" to=researcher(Sonnet4,temp=0.2),writer(Sonnet4,temp=0.7),memory(Sonnet4,temp=0.1)
+  [DEBUG:dispatch] researcher(Sonnet4,temp=0.2) completed in {N}s
+  [DEBUG:dispatch] writer(Sonnet4,temp=0.7) completed in {N}s
+  [DEBUG:dispatch] memory(Sonnet4,temp=0.1) completed in {N}s
   ```
 - If `debug_merge = on`, log the merge inputs summary:
   ```
