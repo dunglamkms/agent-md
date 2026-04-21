@@ -2,13 +2,11 @@
 
 ## Model
 
-| Setting       | Value                      |
-|---------------|----------------------------|
-| `provider`    | copilot                    |
-| `model`       | Claude Sonnet 4 (copilot)  |
-| `temperature` | 0.7                        |
-| `max_tokens`  | 2048                       |
-| `timeout`     | 30                         |
+> Inherits from [models.md](models.md). Overrides below:
+
+| Setting       | Value | Rationale                         |
+|---------------|-------|-----------------------------------|
+| `temperature` | 0.7   | Higher — creative, varied writing |
 
 ## Role
 

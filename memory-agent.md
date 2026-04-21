@@ -2,13 +2,12 @@
 
 ## Model
 
-| Setting       | Value                      |
-|---------------|----------------------------|
-| `provider`    | copilot                    |
-| `model`       | Claude Sonnet 4 (copilot)  |
-| `temperature` | 0.1                        |
-| `max_tokens`  | 1024                       |
-| `timeout`     | 30                         |
+> Inherits from [models.md](models.md). Overrides below:
+
+| Setting       | Value | Rationale                          |
+|---------------|-------|------------------------------------||
+| `temperature` | 0.1   | Minimal — deterministic memory ops |
+| `max_tokens`  | 1024  | Short prior context summaries      |
 
 ## Role
 

@@ -2,13 +2,13 @@
 
 ## Model
 
-| Setting       | Value                     |
-|---------------|---------------------------|
-| `provider`    | copilot                   |
-| `model`       | Claude Opus 4.6 (copilot) |
-| `temperature` | 0.3                       |
-| `max_tokens`  | 1024                      |
-| `timeout`     | 60                        |
+> Inherits from [models.md](models.md). Overrides below:
+
+| Setting      | Value                     | Rationale                            |
+|--------------|---------------------------|--------------------------------------|
+| `model`      | Claude Opus 4.6 (copilot) | Best reasoning for coordination      |
+| `max_tokens` | 1024                      | Merge output is structured, not long |
+| `timeout`    | 60                        | Must wait for subagents + merge      |
 
 ## Role
 
